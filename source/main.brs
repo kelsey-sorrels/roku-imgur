@@ -3,11 +3,11 @@
 ' **
 ' **  Roku Imgur Channel (BrightScript)
 ' **
-' **  november 2012
+' **  December 2012
 ' ********************************************************************
 ' ********************************************************************
 
-REM Demonstrate use of slideshow and audioplayer objects
+REM Roku Imgur Channel
 
 Sub Main()
 
@@ -33,12 +33,15 @@ Sub Main()
 	hdposter = "pkg:/images/mm_icon_focus_hd.png"
 	sdposter = "pkg:/images/mm_icon_focus_sd.png"
 	mainmenudata = [
-		{ShortDescriptionLine1:"Gallery", ShortDescriptionLine2:"SlideShow Gallery", HDPosterUrl:hdposter, SDPosterUrl:sdposter}
+		{ShortDescriptionLine1:"Viral", ShortDescriptionLine2:"Popular Viral Images", HDPosterUrl:hdposter, SDPosterUrl:sdposter},
+		{ShortDescriptionLine1:"Hot", ShortDescriptionLine2:"Newest Viral Images", HDPosterUrl:hdposter, SDPosterUrl:sdposter},
+		{ShortDescriptionLine1:"Popular", ShortDescriptionLine2:"Popular Highest Scoring Images", HDPosterUrl:hdposter, SDPosterUrl:sdposter},
+		{ShortDescriptionLine1:"Newest ", ShortDescriptionLine2:"Newest High Scoring Images", HDPosterUrl:hdposter, SDPosterUrl:sdposter}
 		]
 
 	' create a map of functions to call when a Main Menu icon is selected.
 	' Each is the text name of a member of an object.  In this case I am using functions built into the flickr connection object
-	onselect = [0, rss, "DisplayGallery"]
+	onselect = [0, rss, "DisplayGalleryViral", "DisplayGalleryHot", "DisplayGalleryPopular", "DisplayGalleryNewest"]
 
 	uitkDoPosterMenu(mainmenudata, poster, onselect)
 
